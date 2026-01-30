@@ -44,13 +44,13 @@ def login(credentials: Login):
 def logout():
     return {"message": "Успешный выход"}
 
-@app.get("post/get_posts",
+@app.get("/post/get_posts",
           tags=["Посты"],
           summary="Получение постов",)
 def get_posts():
     return {"message": "Получение постов"}
 
-@app.post("post/create_post",
+@app.post("/post/create_post",
           tags=["Посты"],
           summary="Создание поста",)
 def create_post(post: CreatePost):
@@ -61,25 +61,25 @@ def create_post(post: CreatePost):
         "message": "Пост успешно создан"
     }
 
-@app.post("post/edit_posts", 
+@app.post("/post/edit_posts", 
           tags=["Посты"],
           summary="Редактирование постов",) 
 def edit_posts(post: EditPost):
     return {"message": "Редактирование постов"}
 
-@app.delete("post/delete_post/{post_id}",
+@app.delete("/post/delete_post/{post_id}",
              tags=["Посты"],
              summary="Удаление поста",)
 def delete_post(post_id: int):
     return {"message": f"Пост с ID {post_id} успешно удален"}
 
-@app.get("person/get_persons",
+@app.get("/person/get_persons",
           tags=["Работники"],
           summary="Получение работников",)
 def get_persons():
     return {"message": "Получение работников"}  
 
-@app.post("person/create_person",
+@app.post("/person/create_person",
           tags=["Работники"],
           summary="Создание работника",)
 def create_person(person: CreatePerson):
@@ -89,13 +89,13 @@ def create_person(person: CreatePerson):
         "person_photo": person.person_photo,
         "message": "Работник успешно создан"
     }
-@app.post("person/edit_person",
+@app.post("/person/edit_person",
             tags=["Работники"],
             summary="Редактирование работника",)    
 def edit_person(person: CreatePerson):
     return {"message": "Редактирование работника"}
 
-@app.delete("person/delete_person/{person_id}",
+@app.delete("/person/delete_person/{person_id}",
              tags=["Работники"],
              summary="Удаление работника",)
 def delete_person(person_id: int):
