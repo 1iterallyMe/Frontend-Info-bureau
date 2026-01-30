@@ -100,4 +100,3 @@ def edit_person(person: CreatePerson):
              summary="Удаление работника",)
 def delete_person(person_id: int):
     return {"message": f"Работник с ID {person_id} успешно удален"}
-
