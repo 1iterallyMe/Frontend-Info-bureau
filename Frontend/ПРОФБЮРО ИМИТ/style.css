@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@font-face {
+  font-family: "MoniqaCustom";
+  /* ../ означает: выйти из папки с CSS, чтобы найти папку Fonts */
+  src: url("../Fonts/Moniqa-BoldParagraph.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+.mulish {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+body {
+  background-color: #000000;
+  margin: 0;
+}
+
+.section {
+  width: 100%;
+
+  background-size: contain; /* Картинка видна полностью */
+  background-repeat: no-repeat; /* Чтобы она не дублировалась */
+  background-position: center;
+  background-color: #000000; /* Черный фон заполнит пустые места */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: 100% 100%; /* Растянуть ровно по границам экрана */
+}
+.intro-text {
+  font-family: "Mulish", sans-serif;
+  color: rgb(226, 226, 226);
+  text-align: center;
+  max-width: 600px; /* Чтобы текст не растягивался на весь экран */
+  margin-top: 20px;
+  line-height: 1.6; /* Межстрочный интервал для читаемости */
+}
+
+.intro-text p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400; /* Обычный вес */
+  font-size: 18px;
+  line-height: 1.6;
+  color: white;
+}
+.section1 {
+  color: rgb(204, 204, 204);
+  position: relative;
+  background-image: url("Frame\ 1.1.png");
+  /* Основные настройки шрифта */
+  font-family: "Noto Serif Tamil", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height: 100vh;
+}
+
+.section2 {
+  background-image: url("Frame\ 2.2.png");
+  color: white;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height: 100vh;
+}
+
+#name_prof {
+  max-width: 90%;
+  height: auto;
+}
+#imit_moget {
+  margin-top: 20px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  size: 100px;
+}
+
+.marks {
+  display: flex;
+  gap: 15px;
+
+}
+a:hover{
+  scale(1.2)
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /* Кнопки влево, марки вправо */
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 40px; /* Отступы от краев экрана */
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.text_about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.text_about article {
+  font-family: "MoniqaCustom", sans-serif;
+  font-size: 96px;
+  line-height: 1.6;
+  color: white;
+}
+.text_about p {
+  font-family: "Mulish", sans-serif;
+  color: rgb(226, 226, 226);
+  text-align: center;
+  max-width: 1100px;
+  margin-top: 20px;
+  line-height: 1.6;
+}
