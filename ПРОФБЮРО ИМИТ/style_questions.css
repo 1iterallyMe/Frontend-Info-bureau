@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap");
+
+@font-face {
+  font-family: "MoniqaCustom";
+  src: url("../Fonts/Moniqa-BoldParagraph.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+  background-size: cover; /* Чтобы картинка не растягивалась «больно» */
+  background-position: center; /* Чтобы центр композиции был посередине */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Объединяем секции общим фоном */
+.section1,
+.section2 {
+  background-image: url("Mask group.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Ключевое свойство: картинка фиксируется и становится общей для двух блоков */
+  background-attachment: fixed;
+
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Настройки для текста, чтобы он не терялся на фоне линий */
+.intro-text,
+.text_about {
+  background: rgba(0, 0, 0, 0.7); /* Полупрозрачная подложка */
+  border: #0f0e0e 1px solid;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px); /* Эффект размытия стекла */
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /* Расталкивает кнопки и марки по краям */
+  align-items: center; /* Выравнивает их по одной горизонтальной линии */
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  position: absolute; /* Чтобы шапка была поверх фона вверху первой секции */
+  top: 0;
+}
+
+.buttons,
+.marks {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.buttons {
+  height: 25px;
+  gap: 30px;
+}
+
+a {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+a:hover {
+  transform: scale(1.2); /* Исправлено: добавлено transform */
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+.intro-text p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.text_about {
+  max-width: 1100px;
+  padding: 20px;
+  text-align: center;
+}
+
+.text_about article {
+  font-family: "MoniqaCustom", sans-serif;
+  font-size: clamp(48px, 8vw, 96px); /* Адаптивный размер шрифта */
+  color: white;
+  margin-bottom: 30px;
+}
+
+.text_about p {
+  font-family: "Mulish", sans-serif;
+  color: rgb(226, 226, 226);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
