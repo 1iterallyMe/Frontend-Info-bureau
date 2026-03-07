@@ -2,6 +2,8 @@
 
 @font-face {
   font-family: "MoniqaCustom";
+  /* Путь к шрифтам оставляю как был, так как это не картинка, 
+     но если они тоже в images, скажи мне */
   src: url("../Fonts/Moniqa-BoldParagraph.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
@@ -17,8 +19,8 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: #000000;
-  background-size: cover; /* Чтобы картинка не растягивалась «больно» */
-  background-position: center; /* Чтобы центр композиции был посередине */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -29,14 +31,12 @@ body {
 /* Объединяем секции общим фоном */
 .section1,
 .section2 {
-  background-image: url("Mask group.png");
+  /* ИЗМЕНЕНО: Добавлен путь /images/ */
+  background-image: url("/images/Mask group.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Ключевое свойство: картинка фиксируется и становится общей для двух блоков */
   background-attachment: fixed;
-
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -45,24 +45,22 @@ body {
   justify-content: center;
 }
 
-/* Настройки для текста, чтобы он не терялся на фоне линий */
 .intro-text,
 .text_about {
-  background: rgba(0, 0, 0, 0.7); /* Полупрозрачная подложка */
-  border: #0f0e0e 1px solid;
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 20px;
-  backdrop-filter: blur(5px); /* Эффект размытия стекла */
+  backdrop-filter: blur(5px);
 }
 
 header {
   display: flex;
-  justify-content: space-between; /* Расталкивает кнопки и марки по краям */
-  align-items: center; /* Выравнивает их по одной горизонтальной линии */
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 20px 40px;
   box-sizing: border-box;
-  position: absolute; /* Чтобы шапка была поверх фона вверху первой секции */
+  position: absolute;
   top: 0;
 }
 
@@ -72,28 +70,29 @@ header {
   gap: 20px;
   align-items: center;
 }
+
 .buttons {
   height: 25px;
   gap: 30px;
 }
-/* Стили для логотипов/заголовков в первой секции */
+
 #name_prof, 
 #imit_moget {
-  max-width: 80%;    /* Чтобы картинки не были шире экрана */
-  height: auto;      /* Сохраняем пропорции */
-  display: block;    /* Убираем лишние отступы снизу */
-  margin: 10px auto; /* Центрируем и добавляем небольшие отступы */
-  z-index: 2;        /* Чтобы они точно были над фоном */
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  z-index: 2;
 }
 
 #name_prof {
-  margin-top: 80px;  /* Отступ сверху, чтобы не упиралось в шапку */
-  width: 800px;      /* Ограничиваем максимальную ширину для десктопа */
+  margin-top: 80px;
+  width: 800px;
 }
 
 #imit_moget {
-  width: 300px;      /* Этот элемент обычно чуть меньше основного названия */
-  margin-bottom: 30px; /* Отступ до блока с текстом */
+  width: 300px;
+  margin-bottom: 30px;
 }
 
 a {
@@ -102,9 +101,10 @@ a {
 }
 
 a:hover {
-  transform: scale(1.2); /* Исправлено: добавлено transform */
+  transform: scale(1.2);
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
+
 .intro-text p {
   font-family: "Mulish", sans-serif;
   font-weight: 400;
@@ -123,7 +123,7 @@ a:hover {
 
 .text_about article {
   font-family: "MoniqaCustom", sans-serif;
-  font-size: clamp(48px, 8vw, 96px); /* Адаптивный размер шрифта */
+  font-size: clamp(48px, 8vw, 96px);
   color: white;
   margin-bottom: 30px;
 }

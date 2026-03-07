@@ -17,8 +17,8 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: #000000;
-  background-size: cover; /* Чтобы картинка не растягивалась «больно» */
-  background-position: center; /* Чтобы центр композиции был посередине */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -29,14 +29,12 @@ body {
 /* Объединяем секции общим фоном */
 .section1,
 .section2 {
-  background-image: url("Mask group.png");
+  /* ИЗМЕНЕНО: Добавлен путь /images/ */
+  background-image: url("/images/Mask group.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Ключевое свойство: картинка фиксируется и становится общей для двух блоков */
   background-attachment: fixed;
-
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -45,24 +43,24 @@ body {
   justify-content: center;
 }
 
-/* Настройки для текста, чтобы он не терялся на фоне линий */
+/* Настройки для текста */
 .intro-text,
 .text_about {
-  background: rgba(0, 0, 0, 0.7); /* Полупрозрачная подложка */
+  background: rgba(0, 0, 0, 0.7);
   border: #0f0e0e 1px solid;
   padding: 20px;
   border-radius: 20px;
-  backdrop-filter: blur(5px); /* Эффект размытия стекла */
+  backdrop-filter: blur(5px);
 }
 
 header {
   display: flex;
-  justify-content: space-between; /* Расталкивает кнопки и марки по краям */
-  align-items: center; /* Выравнивает их по одной горизонтальной линии */
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 20px 40px;
   box-sizing: border-box;
-  position: absolute; /* Чтобы шапка была поверх фона вверху первой секции */
+  position: absolute;
   top: 0;
 }
 
@@ -72,6 +70,7 @@ header {
   gap: 20px;
   align-items: center;
 }
+
 .buttons {
   height: 25px;
   gap: 30px;
@@ -83,9 +82,10 @@ a {
 }
 
 a:hover {
-  transform: scale(1.2); /* Исправлено: добавлено transform */
+  transform: scale(1.2);
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
+
 .intro-text p {
   font-family: "Mulish", sans-serif;
   font-weight: 400;
@@ -104,7 +104,7 @@ a:hover {
 
 .text_about article {
   font-family: "MoniqaCustom", sans-serif;
-  font-size: clamp(48px, 8vw, 96px); /* Адаптивный размер шрифта */
+  font-size: clamp(48px, 8vw, 96px);
   color: white;
   margin-bottom: 30px;
 }
