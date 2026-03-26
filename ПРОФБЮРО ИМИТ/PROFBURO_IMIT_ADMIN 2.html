@@ -28,9 +28,6 @@
                 <a href="PROFBURO_IMIT_STAFF.html" class="staff">
                     <img src="/images/Group 11.png" alt="staff">
                 </a>
-                <a href="PROFBURO_IMIT_ADMIN 2.html" class="staff">
-                    <img src="/images/Group 24.png" alt="staff">
-                </a>
             </div>
             <div class="marks">
                 <img src="/images/Marks.png" alt="marks" />
@@ -88,5 +85,26 @@ document.querySelectorAll('a').forEach(link => {
             }
         });
     });
+document.addEventListener('DOMContentLoaded', () => {
+    // Проверяем, залогинен ли админ
+    if (localStorage.getItem('isAdmin') === 'true') {
+        const navMenu = document.querySelector('.buttons');
+        
+        // Если меню найдено и кнопки еще нет
+        if (navMenu && !document.getElementById('dynamicAdminBtn')) {
+            const adminLink = document.createElement('a');
+            adminLink.href = 'PROFBURO_IMIT_ADMIN 2.html';
+            adminLink.id = 'dynamicAdminBtn';
+            adminLink.className = 'admin'; // Используем твой класс для стилей
+
+            const img = document.createElement('img');
+            img.src = '/images/Group 24.png'; // Твоя иконка админа
+            img.alt = 'admin panel';
+
+            adminLink.appendChild(img);
+            navMenu.appendChild(adminLink);
+        }
+    }
+});
 </script>
 </html>
